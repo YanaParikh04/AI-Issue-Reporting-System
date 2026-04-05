@@ -1,0 +1,171 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Report an Issue - Issue Reporting System</title>
+        <link rel="stylesheet" href="styles.css"> </head> 
+        <body> <!-- Navigation Bar --> <nav class="navbar"> 
+            <div class="nav-container"> 
+                <a href="index.html" class="nav-brand"> 
+                    <div class="nav-logo"> 
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path> 
+                            <polyline points="14 2 14 8 20 8"></polyline> 
+                            <line x1="16" y1="13" x2="8" y2="13"></line> 
+                            <line x1="16" y1="17" x2="8" y2="17"></line> 
+                            <polyline points="10 9 9 9 8 9"></polyline> 
+                        </svg> 
+                    </div> 
+                    <span>Issue Reporting System</span> 
+                </a> 
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()"> 
+                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line> 
+                        <line x1="3" y1="18" x2="21" y2="18"></line> 
+                    </svg> 
+                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"> 
+                        <line x1="18" y1="6" x2="6" y2="18"></line> 
+                        <line x1="6" y1="6" x2="18" y2="18"></line> 
+                    </svg> 
+                </button> 
+                <div class="nav-links" id="navLinks"> 
+                    <a href="index.html" class="nav-link"> 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path> 
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline> 
+                        </svg> Home </a> <a href="report.html" class="nav-link active"> 
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path> 
+                                <polyline points="14 2 14 8 20 8"></polyline> 
+                                <line x1="16" y1="13" x2="8" y2="13"></line> 
+                                <line x1="16" y1="17" x2="8" y2="17"></line> 
+                            </svg> Report Issue </a> 
+                            <a href="track.html" class="nav-link"> 
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                    <circle cx="11" cy="11" r="8"></circle> 
+                                    <path d="m21 21-4.35-4.35"></path> 
+                                </svg> Track Status </a> 
+                                <a href="admin.html" class="nav-link"> 
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path> 
+                                    </svg> Admin 
+                                </a> 
+                            </div> 
+                        </div> 
+                    </nav> 
+                    
+                    <!-- Main Content --> 
+                    <main class="main-content"> 
+                        <div class="form-container"> 
+                            <div class="form-header"> 
+                                <h1>Report an Issue</h1> 
+                                <p>Fill out the form below to submit your issue. Our AI system will analyze and prioritize it.</p>
+                             </div> <!-- Form Card --> 
+                             <div class="form-card"> 
+                                <form id="reportForm"> <!-- Full Name --> 
+                                    <div class="form-group"> 
+                                        <label for="fullName" class="form-label">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path> 
+                                                <circle cx="12" cy="7" r="4"></circle> 
+                                            </svg> Full Name 
+                                        </label> 
+                                        <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name" required> 
+                                    </div> 
+                                    
+                                    <!-- User ID --> 
+                                    <div class="form-group"> 
+                                        <label for="userId" class="form-label"> 
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                <rect x="2" y="4" width="20" height="16" rx="2"></rect> 
+                                                <path d="M7 15h0M2 9.5h20"></path> 
+                                            </svg> User ID / Enrollment Number 
+                                        </label> 
+                                        <input type="text" id="userId" name="userId" class="form-input" placeholder="Enter your ID or enrollment number" required> 
+                                    </div> 
+                                    
+                                    <!-- Issue Category --> 
+                                    <div class="form-group"> 
+                                        <label for="category" class="form-label"> 
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path> 
+                                                <line x1="7" y1="7" x2="7.01" y2="7"></line> 
+                                            </svg> Issue Category </label> 
+                                            <select id="category" name="category" class="form-input" required> 
+                                                <option value="">Select a category</option> 
+                                                <option value="Academic">Academic</option> 
+                                                <option value="Facility">Facility</option> 
+                                                <option value="Technical">Technical</option> 
+                                                <option value="Behavioral">Behavioral</option> 
+                                            </select> 
+                                        </div> 
+                                        
+                                        <!-- Issue Description --> 
+                                         <div class="form-group"> 
+                                            <label for="description" class="form-label"> 
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path> 
+                                                    <polyline points="14 2 14 8 20 8"></polyline> 
+                                                    <line x1="16" y1="13" x2="8" y2="13"></line> 
+                                                    <line x1="16" y1="17" x2="8" y2="17"></line> 
+                                                </svg> Issue Description 
+                                            </label> 
+                                            <textarea id="description" name="description" class="form-textarea" rows="6" placeholder="Describe your issue in detail..." required></textarea> 
+                                        </div>
+                                        
+                                        <!-- File Upload --> 
+                                         <div class="form-group"> 
+                                            <label for="fileUpload" class="form-label"> 
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path> 
+                                                    <polyline points="17 8 12 3 7 8"></polyline> 
+                                                    <line x1="12" y1="3" x2="12" y2="15"></line> 
+                                                </svg> Upload Supporting Image (Optional) 
+                                            </label> 
+                                            <input type="file" id="fileUpload" name="fileUpload" accept="image/*" class="form-file-input" onchange="updateFileName(this)"> 
+                                            <label for="fileUpload" class="file-upload-label"> 
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path> 
+                                                    <polyline points="17 8 12 3 7 8"></polyline> 
+                                                    <line x1="12" y1="3" x2="12" y2="15"></line> 
+                                                </svg> 
+                                                <span id="fileName">Choose a file</span> 
+                                            </label> 
+                                        </div> 
+                                        
+                                        <!-- Anonymous Checkbox --> 
+                                        <div class="form-group checkbox-group"> 
+                                            <input type="checkbox" id="anonymous" name="anonymous" class="form-checkbox" onchange="toggleAnonymous(this)"> 
+                                            <label for="anonymous" class="checkbox-label"> 
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> 
+                                                    <polyline points="9 11 12 14 22 4"></polyline> 
+                                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path> 
+                                                </svg> 
+                                                <div> 
+                                                    <strong>Report Anonymously</strong> 
+                                                    <p>Your identity will be kept confidential. Name and ID fields will be disabled.</p>
+                                                 </div> 
+                                                </label> 
+                                            </div> 
+                                            
+                                            <!-- Submit Button --> 
+                                             <button type="submit" class="btn-primary">Submit Issue Report</button> 
+                                            </form> 
+                                        </div> 
+                                        
+                                        <!-- Info Box --> 
+                                         <div class="info-box"> 
+                                            <p><strong>Note:</strong> All submissions are reviewed by our AI system for automatic categorization and priority assignment. You'll receive a tracking ID to monitor your issue's progress.</p> 
+                                        </div> 
+                                    </div> 
+                                </main> 
+                                
+                                <!-- Footer --> 
+                                 <footer class="footer"> 
+                                    <p>© 2026 Issue Reporting System. All rights reserved.</p> 
+                                </footer> 
+                                <script src="script.js"></script> 
+                            </body>
+ </html>
